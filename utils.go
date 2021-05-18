@@ -1,4 +1,4 @@
-package example
+package onedrive
 
 import (
 	"github.com/aos-dev/go-storage/v3/types"
