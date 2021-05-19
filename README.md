@@ -1,5 +1,9 @@
-## How to create service that supports go-storage?
+## go-service-onedrive
 
-- Click [Use this template](https://github.com/aos-dev/go-service-example/generate) to generate a new project.
-- Update `service.toml` to match service ability.
-- Execute `make build` to generate and build project.
+Microsoft [OneDrive] (formerly SkyDrive) is a file hosting service and synchronization service operated 
+by Microsoft as part of its web version of Office.
+This project will use [OneDrive]'s native SDK to implement [go-storage]'s Storager interface,
+enabling users to manipulate data in [OneDrive] through a unified interface.
+
+[OneDrive]: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
+[go-storage]: https://github.com/beyondstorage/go-storage/
