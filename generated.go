@@ -150,6 +150,7 @@ type pairStorageNew struct {
 	DefaultContentType    string
 	hasDefaultIoCallback  bool
 	DefaultIoCallback     func([]byte)
+
 }
 
 // parsePairStorageNew will parse Pair slice into *pairStorageNew
@@ -219,6 +220,7 @@ func parsePairStorageNew(opts []Pair) (pairStorageNew, error) {
 	if !result.HasCredential {
 		return pairStorageNew{}, services.PairRequiredError{Keys: []string{"credential"}}
 	}
+
 
 	return result, nil
 }
