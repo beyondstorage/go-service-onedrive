@@ -1,7 +1,11 @@
 package onedrive
 
-// the refactor of github.com/goh-chunlin/go-onedrive/onedrive upper layer functions(except upload)
-
+// the refactor of github.com/goh-chunlin/go-onedrive/onedrive upper layer functions since its internal implementation does not meet our needs.
+// 1. refactor all URL to support path(instead of item id).
+// 2. basic onedrive item struct, add we needed information like etag and so on.
+// 3. refactor list to support pagination.
+// 4. refactor write/read function with io.reader.
+// 5. add new upload functions with `upload session`.
 import (
 	"bytes"
 	"context"
