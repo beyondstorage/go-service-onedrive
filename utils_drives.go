@@ -198,9 +198,6 @@ func (o *onedriveClient) Upload(ctx context.Context, absPath string, fileSize in
 		return
 	}
 
-	// debug log
-	// fmt.Println("create upload session success!")
-
 	defer func() {
 		if err != nil {
 			// cancel current upload session when error occurred
@@ -233,9 +230,6 @@ func (o *onedriveClient) Upload(ctx context.Context, absPath string, fileSize in
 		req.Header.Add("Content-Length", strconv.Itoa(nowSize))
 		req.Header.Add("Content-Range", fmt.Sprintf("bytes %d-%d/%d", n, n+int64(nowSize)-1, fileSize))
 
-		// debug log
-		//fmt.Println(fmt.Sprintf("Content-Length: %s, Content-Range: %s", strconv.Itoa(nowSize), fmt.Sprintf("bytes %d-%d/%d", n, n+int64(nowSize)-1, fileSize)))
-
 		// needn't authentication, so use plain http client
 		// ref: https://docs.microsoft.com/en-us/graph/api/driveitem-createuploadsession#remarks
 		client := &http.Client{}
@@ -250,9 +244,6 @@ func (o *onedriveClient) Upload(ctx context.Context, absPath string, fileSize in
 		}
 		// close body
 		res.Body.Close()
-
-		// debug log
-		//log.Println(fmt.Sprintf("%d of %d done", n+int64(nowSize)-1, fileSize))
 
 		n += int64(nowSize)
 	}
