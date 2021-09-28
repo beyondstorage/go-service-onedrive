@@ -74,7 +74,7 @@ func newStorager(pairs ...typ.Pair) (store *Storage, err error) {
 		return nil, services.PairUnsupportedError{Pair: ps.WithCredential(opt.Credential)}
 	}
 
-	// create new minio client
+	// create new onedrive client
 	client := getClient(context.TODO(), string(token))
 
 	// generate work dir
@@ -148,7 +148,7 @@ func (s *Storage) formatObject(v *Item, dir, rp string) *typ.Object {
 	return s.formatFileObject(v, dir, rp)
 }
 
-// formatFolderObject format a minio folder object into go-storage object
+// formatFolderObject format a onedrive folder object into go-storage object
 func (s *Storage) formatFolderObject(v *Item, dir, rp string) (o *typ.Object) {
 	o = s.newObject(true)
 
@@ -162,7 +162,7 @@ func (s *Storage) formatFolderObject(v *Item, dir, rp string) (o *typ.Object) {
 	return o
 }
 
-// formatFolderObject format a minio file object into go-storage object
+// formatFolderObject format a onedrive file object into go-storage object
 func (s *Storage) formatFileObject(v *Item, dir, rp string) (o *typ.Object) {
 	o = s.newObject(true)
 
