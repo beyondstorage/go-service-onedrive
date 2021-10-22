@@ -7,3 +7,11 @@ enabling users to manipulate data in [OneDrive] through a unified interface.
 
 [OneDrive]: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
 [go-storage]: https://github.com/beyondstorage/go-storage/
+
+## Notes
+
+**This package has been moved to [go-storage](https://github.com/beyondstorage/go-storage/tree/master/services/onedrive).**
+
+```shell
+go get go.beyondstorage.io/services/onedrive
+```
